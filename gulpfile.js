@@ -2,6 +2,7 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	changed = require('gulp-changed'),
 	concat = require('gulp-concat'),
+	connect = require('gulp-connect'),
 	stripDebug = require('gulp-strip-debug'),
 	uglify = require('gulp-uglify'),
 	autoprefix = require('gulp-autoprefixer'),
@@ -32,6 +33,12 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('./build/styles/'));
 });
 
+
+// Local webserver
+gulp.task('webserver', function() {
+  connect.server();
+});
+
 gulp.task('compass', function() {
 	gulp.src('sass/*.scss')
 	.pipe(compass({
@@ -43,7 +50,7 @@ gulp.task('compass', function() {
 });
 
 // default gulp tasks
-gulp.task('default', ['scripts', 'styles', 'compass'], function() {
+gulp.task('default', ['scripts', 'styles', 'compass', 'webserver'], function() {
 	// watch for JS changes
   gulp.watch('./scripts/*.js', function() {
     gulp.run('jshint', 'scripts');
