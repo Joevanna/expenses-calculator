@@ -64,6 +64,10 @@ section .savings .buttons button {
 }
 section .fixed-expenses {
   text-align: center;
+  margin-bottom: 170px;
+}
+section .fixed-expenses input {
+  display: block;
 }
 section .fixed-expenses button {
   width: 50%;
@@ -81,6 +85,8 @@ section button {
 section .trigger {
   position: relative;
   overflow: hidden;
+  width: 120px;
+  height: 40px;
   margin-bottom: 0;
 }
 section .trigger:after {

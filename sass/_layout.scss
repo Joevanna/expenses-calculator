@@ -39,7 +39,8 @@ section {
 
 	.salary {
 		text-align: center;
-		input {
+
+		input, %input {
 			-webkit-appearance: none;
 			width: 90%;
 			height: 30px;
@@ -50,7 +51,7 @@ section {
 			&:focus { 
 				outline: none; 
   				box-shadow: 0 0 5px 1px #33AB37;
-				}
+			}
 		}
 	}
 
@@ -65,6 +66,10 @@ section {
 
 	.fixed-expenses {
 		text-align: center;
+		margin-bottom: 170px;
+		input {
+			display: block;
+		}
 		button {
 			width: 50%;
 		}
@@ -84,6 +89,8 @@ section {
 	.trigger {
 		position: relative;
 		overflow: hidden;
+		width: 120px;
+		height: 40px;
 		margin-bottom: 0;
 		&:after {
 		  content: "";
