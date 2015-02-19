@@ -15,19 +15,17 @@ body {
 
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 
 }
 
 section {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
+	text-align: center;
 	height: 95%;
 	width: 95%;
-	background-color: rgba(0, 0, 0, .3);
+	background-color: rgba(#33AB37, .3);
 	border-radius: 10px;
-
+	border: 4px solid #33AB37;
 
 	&.result {
 		display: none;
@@ -38,4 +36,76 @@ section {
 		.savings h1 { font-size: 1.3em; }
 		.fixed-expenses h1 { font-size: 1.7em; }
 	}
+
+	.salary {
+		text-align: center;
+		input {
+			-webkit-appearance: none;
+			width: 90%;
+			height: 30px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: none;
+
+			&:focus { 
+				outline: none; 
+  				box-shadow: 0 0 5px 1px #33AB37;
+				}
+		}
+	}
+
+	.savings {
+		text-align: center;
+		.buttons {
+			button {
+				width: 31%;
+			}
+		}
+	}
+
+	.fixed-expenses {
+		text-align: center;
+		button {
+			width: 50%;
+		}
+	}
+
+	button {
+		-webkit-appearance: none;
+		height: 30px;
+		color: white;
+		background-color: rgba(#33AB37, .5);
+		border-radius: 5px;
+		box-shadow: none;
+		border: 2px solid #33AB37;
+		text-transform: uppercase;
+	}
+
+	.trigger {
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 0;
+		&:after {
+		  content: "";
+		  position: absolute;
+		  top: -50%;
+		  right: -50%;
+		  bottom: -50%;
+		  left: -50%;
+		  background: linear-gradient(to bottom, rgba(229, 172, 142,.1), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0.1));
+		  transform: rotateZ(60deg) translate(-5em, 7.5em);
+		}
+
+		&:hover:after {
+		  animation: sheen 1s forwards;
+		}
+
+		@keyframes sheen {
+		  100% { transform: rotateZ(60deg) translate(1em, -9em);}
+		}
+	}
 }
+
+
+
+

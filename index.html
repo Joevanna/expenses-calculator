@@ -25,14 +25,15 @@
             </div>
             <div class="savings">
                 <h1>How often do you want to save?</h1>
-                <label for=weight>Monthly</label>
+                
                 <input type=range id='weight' min=50 value=10 max=500 step=100>
 
-                <label for=weight>Weekly</label>
-                <input type=range id='weight' min=50 value=10 max=500 step=100>
-
-                <label for=weight>Daily</label>
-                <input type=range id='weight' min=50 value=10 max=500 step=100>
+                
+                <div class="buttons">
+                    <button>Daily</button>
+                    <button>Weekly</button>
+                    <button>Monthly</button>
+                </div>
             </div>
             <div class="fixed-expenses">
                 <h1>Your monthly expenses</h1>
@@ -41,6 +42,9 @@
                 </ul>
                 <button class="add-to-list">Add a list item</button>
             </div>
+             <button class="trigger">
+                Done!
+            </button>
         </section>
         <section class="result">
             <div class="your-result">
