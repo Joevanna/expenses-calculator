@@ -1,3 +1,7 @@
+html {
+  width: 100%;
+}
+
 body {
   background: #b1e2b1;
   /* Old browsers */
@@ -14,6 +18,7 @@ body {
   background: linear-gradient(to bottom, #b1e2b1 48%, #71ceef 100%, #21b4e2 100%, #b7deed 100%);
   /* W3C */
   height: 100vh;
+  width: 100%;
   font-family: 'Raleway', sans-serif;
   color: white;
   display: flex;
@@ -28,6 +33,23 @@ section {
   background-color: rgba(51, 171, 55, 0.3);
   border-radius: 10px;
   border: 4px solid #33AB37;
+}
+section .salary input, section .fixed-expenses input {
+  -webkit-appearance: none;
+  width: 85%;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  background: transparent;
+  border: none;
+  font-size: 40px;
+  text-align: center;
+  color: #33AB37;
+}
+section .salary input:focus, section .fixed-expenses input:focus {
+  outline: none;
+  box-shadow: 0 0 5px 1px #33AB37;
 }
 section.result {
   display: none;
@@ -44,17 +66,9 @@ section.landing .fixed-expenses h1 {
 section .salary {
   text-align: center;
 }
-section .salary input {
-  -webkit-appearance: none;
-  width: 90%;
-  height: 30px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: none;
-}
-section .salary input:focus {
-  outline: none;
-  box-shadow: 0 0 5px 1px #33AB37;
+section .salary i {
+  margin-right: 5px;
+  color: #33AB37;
 }
 section .savings {
   text-align: center;
@@ -64,23 +78,31 @@ section .savings .buttons button {
 }
 section .fixed-expenses {
   text-align: center;
-  margin-bottom: 170px;
+  margin-bottom: 70px;
 }
 section .fixed-expenses input {
-  display: block;
+  text-align: center;
+  height: 40px;
 }
-section .fixed-expenses button {
-  width: 50%;
+section .fixed-expenses .list {
+  border-radius: 50%;
+  padding: 10px;
+  background: transparent;
+  width: 70px;
+  height: 70px;
+  color: #33AB37;
+  margin-top: 25px;
 }
 section button {
   -webkit-appearance: none;
-  height: 30px;
-  color: white;
-  background-color: rgba(51, 171, 55, 0.5);
+  height: 40px;
+  font-size: 18px;
+  color: #33AB37;
+  background-color: transparent;
   border-radius: 5px;
   box-shadow: none;
   border: 2px solid #33AB37;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 section .trigger {
   position: relative;
@@ -90,20 +112,21 @@ section .trigger {
   margin-bottom: 0;
 }
 section .trigger:after {
-  content: "";
+  content: " ";
   position: absolute;
   top: -50%;
   right: -50%;
   bottom: -50%;
   left: -50%;
   background: linear-gradient(to bottom, rgba(229, 172, 142, 0.1), rgba(255, 255, 255, 0.5) 50%, rgba(229, 172, 142, 0.1));
-  transform: rotateZ(60deg) translate(-5em, 7.5em);
+  -webkit-transform: rotateZ(60deg) translate(-5em, 7.5em);
 }
 section .trigger:hover:after {
   animation: sheen 1s forwards;
 }
+
 @keyframes sheen {
   100% {
-    transform: rotateZ(60deg) translate(1em, -9em);
+    -webkit-transform: rotateZ(60deg) translate(1em, -9em);
   }
 }
