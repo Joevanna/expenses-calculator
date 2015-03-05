@@ -19,49 +19,63 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <section class="landing">
-            <div class="salary">
-                <h1>Enter your salary</h1>
-                <i class="fa fa-gbp fa-2x"></i>
-                <input type="text">
-            </div>
-            <div class="savings">
-                <h1>How often do you want to save?</h1>
-                
-                <div class="buttons">
-                    <button>Daily</button>
-                    <button>Weekly</button>
-                    <button>Monthly</button>
+        <div class="flip-container">
+
+            <div class="flipper">
+
+                <div class="front">
+                    <section class="landing">
+                        <div class="salary">
+                            <h1>Enter your salary</h1>
+                            <i class="fa fa-gbp fa-2x"></i>
+                            <input type="text">
+                        </div>
+                        <div class="savings">
+                            <h1>How often do you want to save?</h1>
+                            
+                            <div class="buttons">
+                                <button>Daily</button>
+                                <button>Weekly</button>
+                                <button>Monthly</button>
+                            </div>
+                        </div>
+                        <div class="fixed-expenses">
+                            <h1>Your monthly expenses</h1>
+                            <ul>
+                            </ul>
+                            <input type="text" id="input_listName" />
+                            <button class="list fa fa-plus fa-3x"></button>
+                        </div>
+                         <button class="trigger">Done!</button>
+                    </section>
                 </div>
-            </div>
-            <div class="fixed-expenses">
-                <h1>Your monthly expenses</h1>
-                <ul>
-                </ul>
-                <input type="text" id="input_listName" />
-                <button class="list fa fa-plus fa-3x"></button>
-            </div>
-             <button class="trigger">Done!</button>
-        </section>
-        <section class="result">
-            <div class="your-result">
-                <h1>Here's what you're going to have left</h1>
-                <span class="figure"></span>
+
+                <div class="back">
+                    <section class="result">
+                        <div class="your-result">
+                            <h1>Here's what you're going to have left</h1>
+                            <span class="figure"></span>
+                        </div>
+
+                        <div class="info">
+                            <span class="icon"></span>
+                            <div class="popup">
+                                <p></p>
+                                <p></p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
             </div>
 
-            <div class="info">
-                <span class="icon"></span>
-                <div class="popup">
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </div>
-            </div>
-        </section>
+        </div>
+        
+        
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

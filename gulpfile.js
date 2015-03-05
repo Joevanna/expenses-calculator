@@ -6,7 +6,9 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	autoprefix = require('gulp-autoprefixer'),
 	minifyCSS = require('gulp-minify-css'),
-	compass = require('gulp-compass');
+	compass = require('gulp-compass'),
+	browserSync = require('browser-sync'),
+	reload	= browserSync.reload;
 
 gulp.task('jshint', function() {
 	gulp.src('js/*.js')
@@ -32,6 +34,16 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('./build/styles/'));
 });
 
+
+// BrowserSync
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: "./"
+        }
+    });
+});
+
 gulp.task('compass', function() {
 	gulp.src('sass/*.scss')
 	.pipe(compass({
@@ -39,11 +51,12 @@ gulp.task('compass', function() {
       	css: 'stylesheets',
       	sass: 'sass'
 	}))
-	.pipe(gulp.dest('app/assets/temp'));
+	.pipe(gulp.dest('app/assets/temp'))
+	.pipe(browserSync.reload({stream:true}));
 });
 
 // default gulp tasks
-gulp.task('default', ['scripts', 'styles', 'compass'], function() {
+gulp.task('default', ['scripts', 'styles', 'compass', 'browser-sync'], function() {
 	// watch for JS changes
   gulp.watch('./scripts/*.js', function() {
     gulp.run('jshint', 'scripts');

@@ -1,4 +1,6 @@
-html { width: 100%; }
+
+
+* { box-sizing: border-box; }
 
 body {
 	background: #b1e2b1; /* Old browsers */
@@ -9,27 +11,50 @@ body {
 	background: -ms-linear-gradient(top, #b1e2b1 48%,#71ceef 100%,#21b4e2 100%,#b7deed 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #b1e2b1 48%,#71ceef 100%,#21b4e2 100%,#b7deed 100%); /* W3C */
 
-	height: 100vh;
-	width: 100%;
-
 	font-family: 'Raleway', sans-serif;
 
 	color: white;
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
 }
+
+.flip-container {
+	-webkit-perspective: 1000;
+
+		height: 100vh;
+
+	// 	&:hover .flipper,{
+	// 		-webkit-transform: rotateY(180deg);
+	// }
+
+	.flipper {
+		-webkit-transition: .6s;
+		-webkit-transform-style: preserve-3d;
+		position: relative;
+	
+		.flip-container, .front, .back {
+			width: 95%;
+			height: 95%;
+		}
+
+		.front, .back {
+			-webkit-backface-visibility: hidden;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.front { z-index: 2; }
+
+		.back { -webkit-transform: rotateY(180deg); }
+	}
+}
+
+
 
 section {
 	text-align: center;
-	height: 95%;
-	width: 95%;
-	background-color: rgba(#33AB37, .3);
-	border-radius: 10px;
-	border: 4px solid #33AB37;
-
+	
 	%input {
 		-webkit-appearance: none;
 		width: 85%;
@@ -42,16 +67,14 @@ section {
 		font-size: 40px;
 		text-align: center;
 		color: #33AB37;
+		box-shadow: 0 0 5px 1px #33AB37;
 
 		&:focus { 
 			outline: none; 
-				box-shadow: 0 0 5px 1px #33AB37;
+			
 		}
 	}
 
-	&.result {
-		display: none;
-	}
 
 	&.landing {
 		.salary h1 { font-size: 2.2em; }

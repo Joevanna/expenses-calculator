@@ -1,5 +1,5 @@
-html {
-  width: 100%;
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -17,22 +17,38 @@ body {
   /* IE10+ */
   background: linear-gradient(to bottom, #b1e2b1 48%, #71ceef 100%, #21b4e2 100%, #b7deed 100%);
   /* W3C */
-  height: 100vh;
-  width: 100%;
   font-family: 'Raleway', sans-serif;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.flip-container {
+  -webkit-perspective: 1000;
+  height: 100vh;
+}
+.flip-container .flipper {
+  -webkit-transition: .6s;
+  -webkit-transform-style: preserve-3d;
+  position: relative;
+}
+.flip-container .flipper .flip-container, .flip-container .flipper .front, .flip-container .flipper .back {
+  width: 95%;
+  height: 95%;
+}
+.flip-container .flipper .front, .flip-container .flipper .back {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.flip-container .flipper .front {
+  z-index: 2;
+}
+.flip-container .flipper .back {
+  -webkit-transform: rotateY(180deg);
 }
 
 section {
   text-align: center;
-  height: 95%;
-  width: 95%;
-  background-color: rgba(51, 171, 55, 0.3);
-  border-radius: 10px;
-  border: 4px solid #33AB37;
 }
 section .salary input, section .fixed-expenses input {
   -webkit-appearance: none;
@@ -46,13 +62,10 @@ section .salary input, section .fixed-expenses input {
   font-size: 40px;
   text-align: center;
   color: #33AB37;
+  box-shadow: 0 0 5px 1px #33AB37;
 }
 section .salary input:focus, section .fixed-expenses input:focus {
   outline: none;
-  box-shadow: 0 0 5px 1px #33AB37;
-}
-section.result {
-  display: none;
 }
 section.landing .salary h1 {
   font-size: 2.2em;
