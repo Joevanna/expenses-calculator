@@ -1,19 +1,16 @@
 var application = (function() {
 
 	function addListItem() {
-		$('.list').click(function() {
-			var newLi = $('<li>' + ($('input').val()) + '</li>');
-			$(this).append(newLi);
+		$('.list').click(function(){
+		    var text = $('#listName').val() + '<button>x</button>';
+		    if(text.length){
+		        $('<li />', {html: text}).appendTo('ul.justList')
+		    }
 		});
 
-		 // = function() {
-		 //  var list = document.getElementById('list');
-		 //  var newLI = document.createElement('li');
-		 //  newLI.innerHTML = 'A new item';
-		 //  list.appendChild(newLI);
-		 //  setTimeout(function() {
-		 //    newLI.className = newLI.className + " show";
-		 //  }, 10);
+		$('ul').on('click','button' , function(el){
+		    $(this).parent().remove()
+		});
 	}
 
 	function init() {
