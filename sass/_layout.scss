@@ -12,8 +12,10 @@ body {
 	background: linear-gradient(to bottom, #b1e2b1 48%,#71ceef 100%,#21b4e2 100%,#b7deed 100%); /* W3C */
 
 	font-family: 'Raleway', sans-serif;
-
+	background-size: cover;
 	color: white;
+
+	overflow: scroll;
 
 }
 
@@ -54,9 +56,14 @@ body {
 
 section {
 	text-align: center;
+
+		input[type=number]::-webkit-inner-spin-button, 
+		input[type=number]::-webkit-outer-spin-button { 
+		  -webkit-appearance: none; 
+		  margin: 0; 
+		}
 	
 	%input {
-		-webkit-appearance: none;
 		width: 85%;
 		height: 60px;
 		border: none;
@@ -64,7 +71,7 @@ section {
 		box-shadow: none;
 		background: transparent;
 		border: none;
-		font-size: 40px;
+		font-size: 34px;
 		text-align: center;
 		color: #33AB37;
 		box-shadow: 0 0 5px 1px #33AB37;
@@ -89,6 +96,7 @@ section {
 
 		input {
 			@extend %input;
+			-webkit-appearance: none;
 		}
 	}
 
@@ -97,6 +105,12 @@ section {
 		.buttons {
 			button {
 				width: 31%;
+				transition: all .4s linear;
+				&.active {
+					background-color: #33ab37;
+					color: white;
+
+				}
 			}
 		}
 	}
@@ -108,15 +122,44 @@ section {
 			text-align: center;
 			@extend %input;
 			height: 40px;
+			-webkit-appearance: none;
 		}
-		.list {
-			border-radius: 50%;
+		.justList {
+			list-style: none;
+		}
+
+		li {
+			position: relative;
+			text-align: left;
+			width: 97%;
+			margin-left: -15px;
 			padding: 10px;
-			background: transparent;
-			width: 70px;
-			height: 70px;
-			color: #33AB37;
-			margin-top: 25px;
+			border-radius: 10px;
+			border: 1px solid #33AB37;
+			background-color: rgba(#33AB37, .3);
+  			margin-bottom: 20px;
+
+			button {
+				position: absolute;
+				top: 0px;
+				right: 0;
+				border: transparent;
+			}
+		}
+	}
+
+	.list {
+		border-radius: 50%;
+		padding: 10px;
+		background: transparent;	
+		width: 70px;
+		height: 70px;
+		color: #33AB37;
+		margin-top: 25px;
+		transition: all .4s ease-in-out;
+
+		&.active {
+			transform: scale(0.8);
 		}
 	}
 
