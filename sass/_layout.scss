@@ -3,19 +3,11 @@
 * { box-sizing: border-box; }
 
 body {
-	background: #b1e2b1; /* Old browsers */
-	background: -moz-linear-gradient(top, #b1e2b1 48%, #71ceef 100%, #21b4e2 100%, #b7deed 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(48%,#b1e2b1), color-stop(100%,#71ceef), color-stop(100%,#21b4e2), color-stop(100%,#b7deed)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #b1e2b1 48%,#71ceef 100%,#21b4e2 100%,#b7deed 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #b1e2b1 48%,#71ceef 100%,#21b4e2 100%,#b7deed 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #b1e2b1 48%,#71ceef 100%,#21b4e2 100%,#b7deed 100%); /* IE10+ */
-	background: linear-gradient(to bottom, #b1e2b1 48%,#71ceef 100%,#21b4e2 100%,#b7deed 100%); /* W3C */
+	background: #39BFF0;
 
 	font-family: 'Raleway', sans-serif;
 	background-size: cover;
 	color: white;
-
-	overflow: scroll;
 
 }
 
@@ -48,7 +40,11 @@ body {
 
 		.front { z-index: 2; }
 
-		.back { -webkit-transform: rotateY(180deg); }
+		.back { 
+			-webkit-transform: rotateY(180deg);
+			width: 100%;
+			height: 100vh;
+		 }
 	}
 }
 
@@ -60,7 +56,8 @@ section {
 		input[type=number]::-webkit-inner-spin-button, 
 		input[type=number]::-webkit-outer-spin-button { 
 		  -webkit-appearance: none; 
-		  margin: 0; 
+		  margin: 0;
+		  outline: none; 
 		}
 	
 	%input {
@@ -73,8 +70,8 @@ section {
 		border: none;
 		font-size: 34px;
 		text-align: center;
-		color: #33AB37;
-		box-shadow: 0 0 5px 1px #33AB37;
+		color: #0B729E;
+		box-shadow: 0 0 5px 1px #0B729E;
 
 		&:focus { 
 			outline: none; 
@@ -92,7 +89,7 @@ section {
 	.salary {
 		text-align: center;
 
-		i {margin-right: 5px; color: #33AB37;}
+		i {margin-right: 5px; color: #0B729E;}
 
 		input {
 			@extend %input;
@@ -104,12 +101,12 @@ section {
 		text-align: center;
 		.buttons {
 			button {
+				outline: none;
 				width: 31%;
 				transition: all .4s linear;
 				&.active {
-					background-color: #33ab37;
+					background-color: #0B729E;
 					color: white;
-
 				}
 			}
 		}
@@ -135,8 +132,8 @@ section {
 			margin-left: -15px;
 			padding: 10px;
 			border-radius: 10px;
-			border: 1px solid #33AB37;
-			background-color: rgba(#33AB37, .3);
+			border: 1px solid #0B729E;
+			background-color: rgba(#0B729E, .3);
   			margin-bottom: 20px;
 
 			button {
@@ -149,11 +146,25 @@ section {
 	}
 
 	.your-result {
+		margin-top: 50%;
+
+		h1 {
+			text-transform: uppercase;
+		}
+
 		.figure {
-			  width: 100%;
-			  height: 40px;
-			  display: block;
-			  border: 1px solid black;
+			font-size: 60px;
+			 width: 100%;
+			 height: 40px;
+			 display: block;
+			 animation: bigger 1s alternate both;
+		}
+
+		p {
+			margin-top: 60px;
+			text-transform: uppercase;
+			font-size: 30px;
+			display: none;
 		}
 	}
 
@@ -163,7 +174,7 @@ section {
 		background: transparent;	
 		width: 70px;
 		height: 70px;
-		color: #33AB37;
+		color: #0B729E;
 		margin-top: 25px;
 		transition: all .4s ease-in-out;
 
@@ -176,11 +187,11 @@ section {
 		-webkit-appearance: none;
 		height: 40px;
 		font-size: 18px;
-		color: #33AB37;
+		color: #0B729E;
 		background-color: transparent;
 		border-radius: 5px;
 		box-shadow: none;
-		border: 2px solid #33AB37;
+		border: 2px solid #0B729E;
 		text-transform: capitalize;
 	}
 
@@ -209,6 +220,17 @@ section {
 
 
 @keyframes sheen {
-  100% { -webkit-transform: rotateZ(60deg) translate(1em, -9em);}
+  100% { -webkit-transform: rotateZ(60deg) translate(1em, -9em); }
+}
+
+@keyframes bigger {
+	0% { -webkit-transform: scale(1); }
+	30% { -webkit-transform: scale(1); }
+	40% { -webkit-transform: scale(1.08); }
+	50% { -webkit-transform: scale(1); }
+	60% { -webkit-transform: scale(1); }
+	70% { -webkit-transform: scale(1.05); }
+	80% { -webkit-transform: scale(1); }
+	100% { -webkit-transform: scale(1); }
 }
 

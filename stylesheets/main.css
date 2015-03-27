@@ -3,24 +3,10 @@
 }
 
 body {
-  background: #b1e2b1;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #b1e2b1 48%, #71ceef 100%, #21b4e2 100%, #b7deed 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(48%, #b1e2b1), color-stop(100%, #71ceef), color-stop(100%, #21b4e2), color-stop(100%, #b7deed));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #b1e2b1 48%, #71ceef 100%, #21b4e2 100%, #b7deed 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #b1e2b1 48%, #71ceef 100%, #21b4e2 100%, #b7deed 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #b1e2b1 48%, #71ceef 100%, #21b4e2 100%, #b7deed 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #b1e2b1 48%, #71ceef 100%, #21b4e2 100%, #b7deed 100%);
-  /* W3C */
+  background: #39BFF0;
   font-family: 'Raleway', sans-serif;
   background-size: cover;
   color: white;
-  overflow: scroll;
 }
 
 .flip-container {
@@ -50,6 +36,8 @@ body {
 }
 .flip-container .flipper .back {
   -webkit-transform: rotateY(180deg);
+  width: 100%;
+  height: 100vh;
 }
 
 section {
@@ -59,6 +47,7 @@ section input[type=number]::-webkit-inner-spin-button,
 section input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+  outline: none;
 }
 section .salary input, section .fixed-expenses input {
   width: 85%;
@@ -70,8 +59,8 @@ section .salary input, section .fixed-expenses input {
   border: none;
   font-size: 34px;
   text-align: center;
-  color: #33AB37;
-  box-shadow: 0 0 5px 1px #33AB37;
+  color: #0B729E;
+  box-shadow: 0 0 5px 1px #0B729E;
 }
 section .salary input:focus, section .fixed-expenses input:focus {
   outline: none;
@@ -90,7 +79,7 @@ section .salary {
 }
 section .salary i {
   margin-right: 5px;
-  color: #33AB37;
+  color: #0B729E;
 }
 section .salary input {
   -webkit-appearance: none;
@@ -99,11 +88,12 @@ section .savings {
   text-align: center;
 }
 section .savings .buttons button {
+  outline: none;
   width: 31%;
   transition: all .4s linear;
 }
 section .savings .buttons button.active {
-  background-color: #33ab37;
+  background-color: #0B729E;
   color: white;
 }
 section .fixed-expenses {
@@ -125,8 +115,8 @@ section .fixed-expenses li {
   margin-left: -15px;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid #33AB37;
-  background-color: rgba(51, 171, 55, 0.3);
+  border: 1px solid #0B729E;
+  background-color: rgba(11, 114, 158, 0.3);
   margin-bottom: 20px;
 }
 section .fixed-expenses li button {
@@ -135,11 +125,24 @@ section .fixed-expenses li button {
   right: 0;
   border: transparent;
 }
+section .your-result {
+  margin-top: 50%;
+}
+section .your-result h1 {
+  text-transform: uppercase;
+}
 section .your-result .figure {
+  font-size: 60px;
   width: 100%;
   height: 40px;
   display: block;
-  border: 1px solid black;
+  animation: bigger 1s alternate both;
+}
+section .your-result p {
+  margin-top: 60px;
+  text-transform: uppercase;
+  font-size: 30px;
+  display: none;
 }
 section .list {
   border-radius: 50%;
@@ -147,7 +150,7 @@ section .list {
   background: transparent;
   width: 70px;
   height: 70px;
-  color: #33AB37;
+  color: #0B729E;
   margin-top: 25px;
   transition: all .4s ease-in-out;
 }
@@ -158,11 +161,11 @@ section button {
   -webkit-appearance: none;
   height: 40px;
   font-size: 18px;
-  color: #33AB37;
+  color: #0B729E;
   background-color: transparent;
   border-radius: 5px;
   box-shadow: none;
-  border: 2px solid #33AB37;
+  border: 2px solid #0B729E;
   text-transform: capitalize;
 }
 section .trigger {
@@ -189,5 +192,39 @@ section .trigger:hover:after {
 @keyframes sheen {
   100% {
     -webkit-transform: rotateZ(60deg) translate(1em, -9em);
+  }
+}
+
+@keyframes bigger {
+  0% {
+    -webkit-transform: scale(1);
+  }
+
+  30% {
+    -webkit-transform: scale(1);
+  }
+
+  40% {
+    -webkit-transform: scale(1.08);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(1);
+  }
+
+  70% {
+    -webkit-transform: scale(1.05);
+  }
+
+  80% {
+    -webkit-transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
   }
 }
