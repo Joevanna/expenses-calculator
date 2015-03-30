@@ -5,12 +5,29 @@ var application = (function() {
 		$(this).addClass('active');
 	}
 
+	function noNegative(e) {
+		
+		if (e.which == 45 ) {
+			e.preventDefault();
+		} else {
+			$('.trigger').removeAttr('disabled');
+		}
+
+	}
+
+	function enableButton() {
+		$('.list').removeAttr('disabled');
+	}
+
 	function addListItem() {
 	    var text = $('#listName').val() + '<button class="fa fa-times"></button>';
-	    if(text.length){
+	    if(text.length){    	
 	        $('<li />', {html: text}).appendTo('ul.justList');
 	        $('#listName').val('');
+
 	    }
+
+	    $('.list').attr("disabled","disabled");
 	}
 
 	function removeListItem() {
@@ -20,18 +37,17 @@ var application = (function() {
 	function expenses() {
 		var sum = 0;
 
+
 		$('.justList').find('li').each(function() {
 			sum += parseInt($(this).text(), 10);
 			
-		});
-
-		
+		});	
 
 
 		result(sum)
 	}
 
-	function result(sum) {
+	function result(sum, e) {
 
 		var initialSum = $('.initialSum').val(),
 			finalTot = initialSum - sum,
@@ -44,26 +60,33 @@ var application = (function() {
 		if ($('.daily').hasClass('active')) {
 
 			$('.figure').html(percentage.toFixed(2) / 30);
-			$('.your-result p').first().show();
+			$('.your-result .d').first().show();
 
 		} else if ($('.weekly').hasClass('active')) {
 
 			$('.figure').html(percentage.toFixed(2) / 4);
-			$('.your-result p:nth-child(odd)').show();
+			$('.your-result .w').show();
 
 		} else if ($('.monthly').hasClass('active')) {
 
 			$('.figure').html(percentage.toFixed(2));
-			$('.your-result p').last().show();
+			$('.your-result .m').show();
 
-		} 			
+		}
+	}
+
+	function startOver() {
+		location.reload();
 	}
 
 	function events() {
+		$('.initialSum').on('keypress', noNegative);
+		$('#listName').on('keypress', enableButton);
 		$('.list').on('click', addListItem);
 		$('ul').on('click','button', removeListItem);
 		$('.trigger').on('click', expenses);
 		$('.buttons button').on('click', changeClass);
+		$('.refresh').on('click', startOver);
 	}
 
 	function init() {

@@ -183,6 +183,13 @@ section {
 		}
 	}
 
+	.refresh {
+		text-transform: uppercase;
+		padding: 20px 30px;
+		font-size: 30px;
+		line-height: 0;
+	}
+
 	button {
 		-webkit-appearance: none;
 		height: 40px;
@@ -200,7 +207,7 @@ section {
 		overflow: hidden;
 		width: 120px;
 		height: 40px;
-		margin-bottom: 0;
+		margin-bottom: 30px;
 		&:after { 
 		  content: " ";
 		  position: absolute;
