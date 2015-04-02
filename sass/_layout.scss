@@ -62,7 +62,7 @@ section {
 	
 	%input {
 		width: 85%;
-		height: 60px;
+		height: 40px;
 		border: none;
 		border-radius: 5px;
 		box-shadow: none;
@@ -81,7 +81,7 @@ section {
 
 
 	&.landing {
-		.salary h1 { font-size: 2.2em; }
+		.salary h1 { font-size: 2.1em; }
 		.savings h1 { font-size: 1.3em; }
 		.fixed-expenses h1 { font-size: 1.7em; }
 	}
@@ -94,6 +94,19 @@ section {
 		input {
 			@extend %input;
 			-webkit-appearance: none;
+		}
+	}
+
+	.range {
+		input[type="range"] {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			background-color: transparent;
+			border: 1px solid #0B729E;
+			border-radius: 10px;
+			width: 250px;
+			height:10px;
+
 		}
 	}
 
@@ -114,7 +127,7 @@ section {
 
 	.fixed-expenses {
 		text-align: center;
-		margin-bottom: 70px;
+		margin-bottom: 20px;
 		input {
 			text-align: center;
 			@extend %input;
@@ -170,10 +183,10 @@ section {
 
 	.list {
 		border-radius: 50%;
-		padding: 10px;
+		padding: 5px;
 		background: transparent;	
-		width: 70px;
-		height: 70px;
+		width: 60px;
+		height: 60px;
 		color: #0B729E;
 		margin-top: 25px;
 		transition: all .4s ease-in-out;

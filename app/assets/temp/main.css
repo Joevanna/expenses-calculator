@@ -51,7 +51,7 @@ section input[type=number]::-webkit-outer-spin-button {
 }
 section .salary input, section .fixed-expenses input {
   width: 85%;
-  height: 60px;
+  height: 40px;
   border: none;
   border-radius: 5px;
   box-shadow: none;
@@ -66,7 +66,7 @@ section .salary input:focus, section .fixed-expenses input:focus {
   outline: none;
 }
 section.landing .salary h1 {
-  font-size: 2.2em;
+  font-size: 2.1em;
 }
 section.landing .savings h1 {
   font-size: 1.3em;
@@ -84,6 +84,15 @@ section .salary i {
 section .salary input {
   -webkit-appearance: none;
 }
+section .range input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border: 1px solid #0B729E;
+  border-radius: 10px;
+  width: 250px;
+  height: 10px;
+}
 section .savings {
   text-align: center;
 }
@@ -98,7 +107,7 @@ section .savings .buttons button.active {
 }
 section .fixed-expenses {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
 }
 section .fixed-expenses input {
   text-align: center;
@@ -146,10 +155,10 @@ section .your-result p {
 }
 section .list {
   border-radius: 50%;
-  padding: 10px;
+  padding: 5px;
   background: transparent;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   color: #0B729E;
   margin-top: 25px;
   transition: all .4s ease-in-out;

@@ -1,5 +1,9 @@
 var application = (function() {
 
+	function outputUpdate() {
+		$('.output').val($(this).val() + '%');
+	}
+
 	function changeClass() {
 		$('.buttons button').removeClass('active');
 		$(this).addClass('active');
@@ -50,8 +54,9 @@ var application = (function() {
 	function result(sum, e) {
 
 		var initialSum = $('.initialSum').val(),
+			percentage = $('#percent').val(),
 			finalTot = initialSum - sum,
-			percentage = (finalTot / 100) * 10;
+			percentage = (finalTot / 100) * percentage;
 
 		setTimeout(function() {
 			$('.flipper').addClass('turn');
@@ -80,6 +85,7 @@ var application = (function() {
 	}
 
 	function events() {
+		$('#percent').on('change', outputUpdate);
 		$('.initialSum').on('keypress', noNegative);
 		$('#listName').on('keypress', enableButton);
 		$('.list').on('click', addListItem);
