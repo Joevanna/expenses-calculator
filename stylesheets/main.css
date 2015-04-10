@@ -204,6 +204,16 @@ section .trigger:hover:after {
   animation: sheen 1s forwards;
 }
 
+@media (min-width: 601px) {
+  .flip-container .flipper .front, .flip-container .flipper .back {
+    width: 50%;
+    left: 25%;
+  }
+  .flip-container .flipper .front .range input, .flip-container .flipper .back .range input {
+    width: 85%;
+    height: 15px;
+  }
+}
 @keyframes sheen {
   100% {
     -webkit-transform: rotateZ(60deg) translate(1em, -9em);

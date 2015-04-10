@@ -238,6 +238,22 @@ section {
 	}
 }
 
+@media (min-width: 601px) {
+	.flip-container {
+		.flipper {
+			.front, .back {
+				width: 50%;
+				left: 25%;
+
+				.range input {
+					width: 85%;
+					height: 15px;
+				}
+			}
+		}
+	}
+}
+
 
 @keyframes sheen {
   100% { -webkit-transform: rotateZ(60deg) translate(1em, -9em); }
